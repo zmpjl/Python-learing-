@@ -1,0 +1,12 @@
+#学习使用变量
+#钱包余额（变量名：money），初始值为50
+money=50
+print("起初钱包有",money,"元。")
+#卖冰淇淋花费10元，买可乐花费5元
+bcost=10
+cocost=5
+print("买冰淇淋花费",bcost,"元。")
+print("买可乐花费",cocost,"元。")
+money=money-bcost-cocost
+#最后钱包剩余
+print("最后钱包剩余",money,"元。")
