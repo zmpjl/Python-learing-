@@ -27,3 +27,15 @@ print()
 for x in range(0,10,2):
     print(x,end=" ")
 print()
+#continue 的使用
+# for x in range(1,10):
+#     print("第一句")
+#     for x in range(10):
+#         print("第二句")
+#         continue
+#         print("第三句")
+#     print("第四句")
+#break的使用
+for x in range(10):
+    print("这是我说的第一句")
+    break
