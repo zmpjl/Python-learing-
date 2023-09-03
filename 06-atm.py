@@ -14,7 +14,6 @@ def log_in():
         下面部分代码，目前写死，只能用固定账户登录，可改
         """
         if user_name=="pinger"and user_key=="123456":
-            return user_name
             break
         else:
             print("用户名或密码错误，请输入1，重新输入\n"
@@ -22,7 +21,7 @@ def log_in():
             check1=input()
             if check1=="1":
                 continue
-            else:
+            elif check1=="2":
                 while 1:
                     creat_account()
                     while 1:
@@ -35,7 +34,9 @@ def log_in():
                             continue
                     break
                 continue
-
+            else:
+                print("错误输入，为您返回登录界面。")
+                continue
 def menu():
     money=50000
     user_name=log_in()
@@ -48,11 +49,13 @@ def menu():
                 f"退出      请按4；\n"
                 f"请输入您的选择：")
         choice=input()
+        #查询余额
         if choice=="1":
             print(f"--------------------查询余额----------------------\n"
                     f"{user_name}，您好，您的余额剩余：{money}元。\n"
                     f"即将返回到主菜单，谢谢您的使用\n")
             continue
+        #存款
         elif choice=="2":
             print(f"---------------------存款------------------------\n"
                     f"请输入您要存款的金额:\n")
@@ -68,24 +71,34 @@ def menu():
                     f"当前账户余额剩余{money}元。\n"
                     f"即将返回到主菜单，谢谢您的使用\n")
             continue
+        #取款
         elif choice=="3":
-            print(f"---------------------取款------------------------\n"
-                    f"请输入您要取款的金额:\n")
-            minus = input()
             while 1:
-                if minus.isdigit():  # 检查是否可以转换为整数
-                    money += int(minus)  # 将字符串转换为整数并添加到现有金额中
-                    break
+                print(f"---------------------取款------------------------\n"
+                        f"请输入您要取款的金额:")
+                minus = input()
+                if minus.isdigit():# 检查是否可以转换为整数
+                    if int(minus)>money:
+                        print("取款金额大于当前用户余额，请重新输入")
+                        continue
+                    else:
+                        break
                 else:
-                    print("取款的金额必须是一个数字")
+                    print("检测到错误输入，请检查您的取款金额是否为整数，并重新输入。")
                     continue
+
+
+            money -= int(minus)  # 将字符串转换为整数并添加到现有金额中
+
             print(f"{user_name},恭喜您，取款{minus}元成功。\n"
                     f"当前账户余额剩余{money}元。\n"
                     f"即将返回到主菜单，谢谢您的使用\n")
             continue
+        #退出
         elif choice=="4":
             print("谢谢您的使用，欢迎下次光临。\n")
             break
+        #错误输入
         else:
             print("检测到错误输入，即将退回到主菜单。\n")
             continue
