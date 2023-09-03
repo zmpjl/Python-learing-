@@ -5,16 +5,37 @@ def log_in():
     :return:
     """
     while 1:
+        print("--------------------登录帐户-----------------------")
         print("输入你的用户名：")
         user_name=input()
         print("输入你的密码：")
         user_key=input()
+        """
+        下面部分代码，目前写死，只能用固定账户登录，可改
+        """
         if user_name=="pinger"and user_key=="123456":
             return user_name
             break
         else:
-            print("用户名或密码错误，请重新输入")
-            continue
+            print("用户名或密码错误，请输入1，重新输入\n"
+                  "如果您还没有账户，请输入2，进行注册账户")
+            check1=input()
+            if check1=="1":
+                continue
+            else:
+                while 1:
+                    creat_account()
+                    while 1:
+                        print("请输入1，重新返回登录界面。")
+                        check2=input()
+                        if check2=="1":
+                            break
+                        else:
+                            print("检测到错误输入，请重新输入")
+                            continue
+                    break
+                continue
+
 def menu():
     money=50000
     user_name=log_in()
@@ -68,5 +89,11 @@ def menu():
         else:
             print("检测到错误输入，即将退回到主菜单。\n")
             continue
-
+def creat_account():
+    print("--------------------创建帐户-----------------------\n"
+          "欢迎来到创建帐户界面\n"
+          "请输入您的用户名：")
+    user_name=input()
+    print("请输入您的密码：")
+    user_key=input()
 menu()
