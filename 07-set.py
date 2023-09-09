@@ -1,0 +1,36 @@
+#集合的定义
+my_set={0,"输出","goushi","输出","dangao","goushi","dangao","xiangfen","xiangfen"}
+print(my_set)
+my_new_set=set()
+#集合相对于其他几种数据容器，因为其乱序的特点，所以没有对应序列，无法用下标指定数据，
+#但是，其可以修改
+my_set.add("我的天呐")
+my_set.add(0)#自动去重，所以相当于没用语句
+print(my_set)
+#移除
+my_set.remove(0)
+print(my_set)
+#随机取一个元素
+print(my_set.pop())
+print(my_set)#取出随机元素后，集合对应元素就不存在了
+#清空
+my_set.clear()
+print(my_set)#清空后，剩一个空集合，及set()
+#差集，
+set1={1,2,3}
+set2={1,5,6}
+print(set1.difference(set2))
+print(set2.difference(set1))
+#消除差集，删除集合x中和集合y相同的元素
+#setx.different_update(sety)
+set1.difference_update(set2)
+print(set1)#集合1被改变
+#合并
+set3=set1.union(set2)
+print(set3)
+#课后练习
+my_list=["黑马程序员","传智播客","黑马程序员","传智播客","itheima","itcast","itheima","itcast","best"]
+my_set=set()
+for x in my_list:
+    my_set.add(x)
+print(my_set)
