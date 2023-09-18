@@ -1,0 +1,17 @@
+my_list=[3,1,2,5,4]
+my_tuple=(3,1,2,5,4)
+my_str="bdcefga"
+my_set={3,1,2,5,4}
+my_dict={"key3":1,"key1":2,"key2":3,"key5":4,"key4":5,}
+#排序，（排序后默认全部转换为列表）
+print(sorted(my_list))
+print(sorted(my_tuple))
+print(sorted(my_str))
+print(sorted(my_set))
+print(sorted(my_dict))
+#反向排序
+print(sorted(my_list,reverse=True))
+print(sorted(my_tuple,reverse=True))
+print(sorted(my_str,reverse=True))
+print(sorted(my_set,reverse=True))
+print(sorted(my_dict,reverse=True))
