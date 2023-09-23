@@ -37,7 +37,7 @@ mydict2.clear()
 print(mydict2)
 #返回所有key值
 keys=my_dic.keys()
-print(keys)
+print(f"这里是keys{keys}")
 for key in keys:
     print(key)
     print(f"对应的value值是{my_dic[key]}")

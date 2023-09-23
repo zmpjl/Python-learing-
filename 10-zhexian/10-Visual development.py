@@ -5,11 +5,11 @@ import json
 from pyecharts.charts import Line
 from pyecharts.options import TitleOpts, LegendOpts, ToolboxOpts, VisualMapOpts, LabelOpts
 
-f_us=open("美国.txt","r",encoding="UTF-8")
+f_us=open("美国.txt", "r", encoding="UTF-8")
 us_data=f_us.read()
-f_jp=open("日本.txt","r",encoding="UTF-8")
+f_jp=open("日本.txt", "r", encoding="UTF-8")
 jp_data=f_jp.read()
-f_in=open("印度.txt","r",encoding="UTF-8")
+f_in=open("印度.txt", "r", encoding="UTF-8")
 in_data=f_in.read()
 #处理数据，将不规范的去掉
 us_data=us_data.replace("jsonp_1629344292311_69436(","")

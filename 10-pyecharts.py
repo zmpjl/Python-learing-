@@ -10,13 +10,14 @@ line.add_xaxis(["中国","美国","英国"])
 #添加y轴数据
 line.add_yaxis("GDP",[30,20,10])
 #设置全局配置通过set_global_opts进行配置
-line.set_global_opts(
-    #用来设置标题
-    title_opts=TitleOpts(title="GDP展示",pos_left="center",pos_bottom="1%"),
-    #设置图例
-    legend_opts=LegendOpts(is_show=True ),
+list.set_global_opts(
+    #增加工具栏
     toolbox_opts=ToolboxOpts(is_show=True),
+    legend_opts=LegendOpts(is_show=True),
+    #增加颜色对比
     visualmap_opts=VisualMapOpts(is_show=True),
+    #设置title
+    title_opts=TitleOpts(title="三国GDP对比图", pos_left="center", pos_bottom="1%"),
 
 )
 #通过render生成图表

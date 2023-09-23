@@ -4,7 +4,7 @@ import json
 from pyecharts.charts import Map
 from pyecharts.options import TitleOpts, VisualMapOpts
 
-f = open("疫情.txt","r",encoding="UTF-8")
+f = open("疫情.txt", "r", encoding="UTF-8")
 data = f.read()
 f.close()
 #将json转换为字典
@@ -18,6 +18,8 @@ for city_data in city_data_list:
         data_list.append((city_name,city_confirm))
 
 print(data_list)
+#如有需要   ，可以对单独对象进行添加
+data_list.append(("济源市",5))
 #创建地图对象
 map=Map()
 #添加数据
